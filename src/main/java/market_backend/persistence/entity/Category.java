@@ -2,6 +2,8 @@ package market_backend.persistence.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table
 
@@ -20,6 +22,9 @@ public class Category {
     private Integer total;
 
     private Boolean estado;
+
+    @OneToMany(mappedBy = "categoria")
+    private List<Product> products;
 
     public Integer getIdCompra() {
         return idCompra;

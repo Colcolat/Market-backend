@@ -2,6 +2,8 @@ package market_backend.persistence.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table (name = "clientes")
 public class Client {
@@ -21,6 +23,9 @@ public class Client {
 
     @Column(name = "correo_electronico")
     private String correoElectronico;
+
+    @OneToMany(mappedBy = "cliente")
+    private List<Purchase> compras;
 
     public int getId() {
         return id;
