@@ -30,6 +30,22 @@ public class Purchase {
     @OneToMany(mappedBy = "compra")
     private List<CompraProducto> productos;
 
+    public Client getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Client cliente) {
+        this.cliente = cliente;
+    }
+
+    public List<CompraProducto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<CompraProducto> productos) {
+        this.productos = productos;
+    }
+
     public Integer getIdCompra() {
         return IdCompra;
     }

@@ -43,6 +43,14 @@ public class Client {
         this.nombre = nombre;
     }
 
+    public List<Purchase> getCompras() {
+        return compras;
+    }
+
+    public void setCompras(List<Purchase> compras) {
+        this.compras = compras;
+    }
+
     public String getApellidos() {
         return apellidos;
     }

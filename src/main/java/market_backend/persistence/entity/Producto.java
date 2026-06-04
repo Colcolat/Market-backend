@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 @Entity
 @Table (name = "productos")
 
-public class Product {
+public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
@@ -31,7 +31,15 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "id_categoria",
     insertable = false, updatable = false)
-    private Category category;
+    private Categoria categoria;
+
+    public Categoria getCategory() {
+        return categoria;
+    }
+
+    public void setCategory(Categoria categoria) {
+        this.categoria = categoria;
+    }
 
     public Integer getIdProducto() {
         return idProducto;

@@ -7,7 +7,7 @@ import java.util.List;
 @Entity
 @Table
 
-public class Category {
+public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
@@ -24,7 +24,7 @@ public class Category {
     private Boolean estado;
 
     @OneToMany(mappedBy = "categoria")
-    private List<Product> products;
+    private List<Producto> productos;
 
     public Integer getIdCompra() {
         return idCompra;
@@ -48,6 +48,14 @@ public class Category {
 
     public void setCantidad(Integer cantidad) {
         this.cantidad = cantidad;
+    }
+
+    public List<Producto> getProducts() {
+        return productos;
+    }
+
+    public void setProducts(List<Producto> productos) {
+        this.productos = productos;
     }
 
     public Integer getTotal() {
