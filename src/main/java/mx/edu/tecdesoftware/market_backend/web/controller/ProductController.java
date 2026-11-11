@@ -51,7 +51,7 @@ public class ProductController {
     @ApiResponse(responseCode = "500", description = "Internal server error")
     @GetMapping("/category/{categoryId}")
     public ResponseEntity<List<Product>> getByCategory( @Parameter(description = "CategoryID", example = "4546221", required = true)
-            int categoryId){
+            @PathVariable("categoryId") int categoryId){
         return productService.getProductByCategory(categoryId)
                 .filter(products -> !products.isEmpty())
                 .map(ResponseEntity::ok)
